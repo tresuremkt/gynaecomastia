@@ -29,31 +29,33 @@ document.addEventListener("DOMContentLoaded", () => {
     typeGrid.classList.add("is-visible");
   }
 
-  const accordionItems = document.querySelectorAll(".accordion-item");
-
   const setPanelHeight = (item, open) => {
     const panel = item.querySelector(".accordion-panel");
     panel.style.maxHeight = open ? `${panel.scrollHeight}px` : null;
   };
 
-  accordionItems.forEach((item) => {
-    const trigger = item.querySelector(".accordion-trigger");
-    if (item.classList.contains("is-open")) setPanelHeight(item, true);
+  document.querySelectorAll(".accordion").forEach((accordion) => {
+    const items = accordion.querySelectorAll(".accordion-item");
 
-    trigger.addEventListener("click", () => {
-      const willOpen = !item.classList.contains("is-open");
+    items.forEach((item) => {
+      const trigger = item.querySelector(".accordion-trigger");
+      if (item.classList.contains("is-open")) setPanelHeight(item, true);
 
-      accordionItems.forEach((other) => {
-        if (other !== item && other.classList.contains("is-open")) {
-          other.classList.remove("is-open");
-          other.querySelector(".accordion-trigger").setAttribute("aria-expanded", "false");
-          setPanelHeight(other, false);
-        }
+      trigger.addEventListener("click", () => {
+        const willOpen = !item.classList.contains("is-open");
+
+        items.forEach((other) => {
+          if (other !== item && other.classList.contains("is-open")) {
+            other.classList.remove("is-open");
+            other.querySelector(".accordion-trigger").setAttribute("aria-expanded", "false");
+            setPanelHeight(other, false);
+          }
+        });
+
+        item.classList.toggle("is-open", willOpen);
+        trigger.setAttribute("aria-expanded", String(willOpen));
+        setPanelHeight(item, willOpen);
       });
-
-      item.classList.toggle("is-open", willOpen);
-      trigger.setAttribute("aria-expanded", String(willOpen));
-      setPanelHeight(item, willOpen);
     });
   });
 });
