@@ -662,3 +662,74 @@ ul { list-style: none; margin: 0; padding: 0; }
   .accordion-panel { transition: none; }
   .accordion-icon { transition: none; }
 }
+
+/* ---------------- Doctor section ---------------- */
+.doctor {
+  padding: 80px 0;
+  background: var(--color-white);
+}
+
+.doctor-inner {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 40px;
+  align-items: center;
+}
+
+@media (min-width: 900px) {
+  .doctor-inner {
+    grid-template-columns: 0.8fr 1.2fr;
+    gap: 60px;
+  }
+
+  .doctor-copy { text-align: left; }
+}
+
+@media (max-width: 899px) {
+  .doctor-copy { text-align: center; }
+}
+
+.doctor-photo-frame {
+  position: relative;
+  aspect-ratio: 3 / 4;
+  max-width: 380px;
+  margin: 0 auto;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background: var(--color-brown-100);
+  box-shadow: var(--shadow-soft);
+}
+
+.doctor-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.doctor-en {
+  font-size: 0.45em;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: var(--color-brown-500);
+  margin-left: 10px;
+  vertical-align: middle;
+}
+
+.credential-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.credential-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  font-size: 0.98rem;
+  color: var(--color-text-soft);
+}
+
+@media (max-width: 899px) {
+  .credential-list { align-items: center; }
+  .credential-list li { text-align: left; }
+}
