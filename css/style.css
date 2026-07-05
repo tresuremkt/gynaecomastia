@@ -691,18 +691,20 @@ ul { list-style: none; margin: 0; padding: 0; }
 
 .doctor-photo-frame {
   position: relative;
-  aspect-ratio: 3 / 4;
-  max-width: 380px;
+  aspect-ratio: 1 / 1;
+  width: min(320px, 80%);
   margin: 0 auto;
-  border-radius: var(--radius-lg);
-  overflow: hidden;
-  background: var(--color-brown-100);
+  border-radius: 50%;
+  padding: 14px;
+  background: var(--color-white);
+  border: 8px solid var(--color-brown-500);
   box-shadow: var(--shadow-soft);
 }
 
 .doctor-photo {
   width: 100%;
   height: 100%;
+  border-radius: 50%;
   object-fit: cover;
 }
 
