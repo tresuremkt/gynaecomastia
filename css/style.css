@@ -735,3 +735,115 @@ ul { list-style: none; margin: 0; padding: 0; }
   .credential-list { align-items: center; }
   .credential-list li { text-align: left; }
 }
+
+/* ---------------- Method section ---------------- */
+.method {
+  padding: 80px 0;
+  background: var(--color-cream);
+}
+
+.method-head {
+  max-width: 760px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.method-tech-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+  max-width: 900px;
+  margin: 40px auto;
+}
+
+@media (min-width: 700px) {
+  .method-tech-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+.method-tech-card {
+  background: var(--color-white);
+  border: 1px solid var(--color-brown-100);
+  border-radius: var(--radius-lg);
+  padding: 28px;
+  box-shadow: var(--shadow-soft);
+}
+
+.method-tech-num {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--color-brown-500);
+  color: var(--color-white);
+  font-weight: 700;
+  font-size: 1.05rem;
+  margin: 0 0 16px;
+}
+
+.method-tech-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--color-brown-900);
+  margin: 0 0 12px;
+}
+
+.method-tech-desc {
+  margin: 0;
+  font-size: 0.95rem;
+  color: var(--color-text-soft);
+  line-height: 1.7;
+}
+
+.method > .container > .section-desc {
+  max-width: 760px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+.method-badges {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  margin: 28px 0 8px;
+}
+
+.method-badge {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--color-brown-700);
+  background: var(--color-brown-100);
+  padding: 10px 22px;
+  border-radius: 999px;
+}
+
+.method-gallery {
+  margin-top: 56px;
+}
+
+.method-gallery-title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--color-brown-900);
+  text-align: center;
+  margin: 0 0 28px;
+}
+
+.ba-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+
+@media (min-width: 640px) {
+  .ba-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (min-width: 1100px) {
+  .ba-grid { grid-template-columns: repeat(4, 1fr); }
+}
+
+.ba-placeholder { aspect-ratio: 1 / 1; }
