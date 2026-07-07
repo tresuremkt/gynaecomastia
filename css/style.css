@@ -179,17 +179,35 @@ ul { list-style: none; margin: 0; padding: 0; }
   margin: 0 0 20px;
 }
 
+.hero-title-banner {
+  position: relative;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  padding: 32px 28px;
+  margin: 0 0 24px;
+  background-image:
+    linear-gradient(0deg, rgba(10, 15, 28, 0.9) 0%, rgba(10, 15, 28, 0.5) 50%, rgba(10, 15, 28, 0.3) 100%),
+    url("https://tresure-clinic.com/wp-content/uploads/2026/07/gynecomastia_top01.jpg");
+  background-size: cover;
+  background-position: center;
+  box-shadow: var(--shadow-soft);
+}
+
 .hero-title {
   font-size: clamp(1.7rem, 4.4vw, 2.6rem);
   line-height: 1.45;
   font-weight: 700;
-  color: var(--color-brown-900);
-  margin: 0 0 24px;
+  color: var(--color-white);
+  margin: 0;
 }
 
 .hero-title .highlight {
-  color: var(--color-brown-500);
+  color: var(--color-brown-300);
   font-size: 1.15em;
+}
+
+@media (max-width: 480px) {
+  .hero-title-banner { padding: 24px 20px; }
 }
 
 .hero-desc {
