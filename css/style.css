@@ -117,43 +117,11 @@ ul { list-style: none; margin: 0; padding: 0; }
   position: relative;
   overflow: hidden;
   padding: 56px 0 90px;
-  background: linear-gradient(180deg, var(--color-cream) 0%, var(--color-white) 75%);
-}
-
-.hero-decor { position: absolute; inset: 0; z-index: 0; pointer-events: none; }
-
-.blob {
-  position: absolute;
-  border-radius: 50%;
-  filter: blur(2px);
-  opacity: 0.55;
-}
-
-.blob-1 {
-  width: 480px;
-  height: 480px;
-  top: -180px;
-  right: -160px;
-  background: radial-gradient(circle at 30% 30%, var(--color-brown-100), transparent 70%);
-}
-
-.blob-2 {
-  width: 360px;
-  height: 360px;
-  bottom: -140px;
-  left: -120px;
-  background: radial-gradient(circle at 60% 60%, var(--color-cream-deep), transparent 70%);
-}
-
-.dot-grid {
-  position: absolute;
-  right: 6%;
-  bottom: 8%;
-  width: 140px;
-  height: 140px;
-  background-image: radial-gradient(var(--color-brown-300) 2px, transparent 2px);
-  background-size: 18px 18px;
-  opacity: 0.4;
+  background-image:
+    linear-gradient(0deg, rgba(10, 15, 28, 0.9) 0%, rgba(10, 15, 28, 0.5) 50%, rgba(10, 15, 28, 0.3) 100%),
+    url("https://tresure-clinic.com/wp-content/uploads/2026/07/gynecomastia_top01.jpg");
+  background-size: cover;
+  background-position: center;
 }
 
 .hero-inner {
@@ -172,25 +140,13 @@ ul { list-style: none; margin: 0; padding: 0; }
   font-size: 0.9rem;
   font-weight: 700;
   letter-spacing: 0.02em;
-  color: var(--color-brown-600);
-  background: var(--color-brown-100);
+  color: var(--color-white);
+  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(6px);
   padding: 8px 18px;
   border-radius: 999px;
   margin: 0 0 20px;
-}
-
-.hero-title-banner {
-  position: relative;
-  border-radius: var(--radius-lg);
-  overflow: hidden;
-  padding: 32px 28px;
-  margin: 0 0 24px;
-  background-image:
-    linear-gradient(0deg, rgba(10, 15, 28, 0.9) 0%, rgba(10, 15, 28, 0.5) 50%, rgba(10, 15, 28, 0.3) 100%),
-    url("https://tresure-clinic.com/wp-content/uploads/2026/07/gynecomastia_top01.jpg");
-  background-size: cover;
-  background-position: center;
-  box-shadow: var(--shadow-soft);
 }
 
 .hero-title {
@@ -198,7 +154,7 @@ ul { list-style: none; margin: 0; padding: 0; }
   line-height: 1.45;
   font-weight: 700;
   color: var(--color-white);
-  margin: 0;
+  margin: 0 0 24px;
 }
 
 .hero-title .highlight {
@@ -206,13 +162,9 @@ ul { list-style: none; margin: 0; padding: 0; }
   font-size: 1.15em;
 }
 
-@media (max-width: 480px) {
-  .hero-title-banner { padding: 24px 20px; }
-}
-
 .hero-desc {
   font-size: clamp(0.98rem, 1.6vw, 1.08rem);
-  color: var(--color-text-soft);
+  color: rgba(255, 255, 255, 0.85);
   margin: 0 0 18px;
 }
 
@@ -223,13 +175,23 @@ ul { list-style: none; margin: 0; padding: 0; }
   margin: 30px 0 32px;
 }
 
+.hero .btn-outline {
+  color: var(--color-white);
+  border-color: rgba(255, 255, 255, 0.6);
+}
+
+.hero .btn-outline:hover {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: var(--color-white);
+}
+
 .trust-list {
   display: flex;
   flex-direction: column;
   gap: 12px;
   font-size: 0.95rem;
   font-weight: 500;
-  color: var(--color-brown-700);
+  color: var(--color-white);
 }
 
 .trust-list li { display: flex; align-items: center; gap: 10px; }
