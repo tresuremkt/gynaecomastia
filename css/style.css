@@ -454,7 +454,7 @@ ul { list-style: none; margin: 0; padding: 0; }
 }
 
 .type-card {
-  background: rgba(255, 255, 255, 0.8);
+  background: rgba(255, 255, 255, 0.6);
   border: 1px solid var(--color-brown-100);
   border-radius: var(--radius-lg);
   padding: 32px 28px;
@@ -540,8 +540,12 @@ ul { list-style: none; margin: 0; padding: 0; }
 /* ---------------- Why section (accordion) ---------------- */
 .why {
   padding: 80px 0;
-  background: var(--color-white);
   position: relative;
+  background-image:
+    linear-gradient(rgba(10, 15, 28, 0.75), rgba(10, 15, 28, 0.75)),
+    url("https://tresure-clinic.com/wp-content/uploads/2026/07/tresure_PShouse.jpg");
+  background-size: cover;
+  background-position: center;
 }
 
 .why-head {
@@ -550,64 +554,27 @@ ul { list-style: none; margin: 0; padding: 0; }
   text-align: center;
 }
 
+.why-head .section-title,
+.why-head .section-desc {
+  color: var(--color-white);
+}
+
 .why-body {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 40px;
-  align-items: start;
+  max-width: 860px;
+  margin: 0 auto;
 }
 
-@media (min-width: 900px) {
-  .why-body {
-    grid-template-columns: 0.85fr 1.15fr;
-    gap: 56px;
-    align-items: center;
-  }
+.why .accordion-item,
+.why .accordion-item:first-child {
+  border-color: rgba(255, 255, 255, 0.3);
 }
 
-.why-photo-frame {
-  position: relative;
-  aspect-ratio: 4 / 3;
-  border-radius: var(--radius-lg);
-  overflow: hidden;
-  box-shadow: var(--shadow-soft);
-}
+.why .accordion-title { color: var(--color-white); }
+.why .accordion-panel-inner { color: rgba(255, 255, 255, 0.85); }
 
-.why-photo {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-/* Mobile: photo becomes the section background with an overlay so the
-   copy and accordion sit legibly on top instead of a stacked image card. */
-@media (max-width: 899px) {
-  .why {
-    background-image: linear-gradient(rgba(58, 36, 22, 0.75), rgba(58, 36, 22, 0.75)), url("assets/tresure_PShouse.png");
-    background-size: cover;
-    background-position: center;
-  }
-
-  .why .why-visual { display: none; }
-
-  .why .section-title,
-  .why .section-desc {
-    color: var(--color-white);
-  }
-
-  .why .accordion-item,
-  .why .accordion-item:first-child {
-    border-color: rgba(255, 255, 255, 0.3);
-  }
-
-  .why .accordion-title { color: var(--color-white); }
-  .why .accordion-panel-inner { color: rgba(255, 255, 255, 0.85); }
-
-  .why .accordion-icon { background: var(--color-white); }
-  .why .accordion-icon::before,
-  .why .accordion-icon::after { background: var(--color-brown-700); }
-  .why .accordion-item.is-open .accordion-icon { background: var(--color-brown-100); }
-}
+.why .accordion-icon { background: var(--color-white); }
+.why .accordion-icon svg { color: var(--color-brown-700); }
+.why .accordion-item.is-open .accordion-icon { background: var(--color-brown-100); }
 
 .accordion { display: flex; flex-direction: column; }
 
@@ -655,26 +622,25 @@ ul { list-style: none; margin: 0; padding: 0; }
   height: 40px;
   border-radius: 50%;
   background: var(--color-brown-500);
-  transition: transform 0.3s ease, background-color 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s ease;
 }
 
-.accordion-icon::before,
-.accordion-icon::after {
-  content: "";
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  background: var(--color-white);
-  border-radius: 2px;
-  transform: translate(-50%, -50%);
+.accordion-icon svg {
+  width: 18px;
+  height: 18px;
+  color: var(--color-white);
+  transition: transform 0.3s ease;
 }
-
-.accordion-icon::before { width: 16px; height: 2px; }
-.accordion-icon::after { width: 2px; height: 16px; }
 
 .accordion-item.is-open .accordion-icon {
-  transform: rotate(45deg);
   background: var(--color-brown-700);
+}
+
+.accordion-item.is-open .accordion-icon svg {
+  transform: rotate(180deg);
 }
 
 .accordion-panel {
@@ -693,7 +659,7 @@ ul { list-style: none; margin: 0; padding: 0; }
 
 @media (prefers-reduced-motion: reduce) {
   .accordion-panel { transition: none; }
-  .accordion-icon { transition: none; }
+  .accordion-icon svg { transition: none; }
 }
 
 /* ---------------- Doctor section ---------------- */
@@ -855,7 +821,7 @@ ul { list-style: none; margin: 0; padding: 0; }
 }
 
 .method-tech-card {
-  background: rgba(255, 255, 255, 0.8);
+  background: rgba(255, 255, 255, 0.6);
   border: 1px solid var(--color-brown-100);
   border-radius: var(--radius-lg);
   padding: 28px;
