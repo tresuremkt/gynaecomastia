@@ -454,7 +454,7 @@ ul { list-style: none; margin: 0; padding: 0; }
 }
 
 .type-card {
-  background: var(--color-white);
+  background: rgba(255, 255, 255, 0.8);
   border: 1px solid var(--color-brown-100);
   border-radius: var(--radius-lg);
   padding: 32px 28px;
@@ -766,20 +766,14 @@ ul { list-style: none; margin: 0; padding: 0; }
 }
 
 .doctor-social-icon {
-  width: 18px;
-  height: 18px;
-  background-color: var(--color-brown-600);
-  mask-repeat: no-repeat;
-  mask-position: center;
-  mask-size: contain;
-  -webkit-mask-repeat: no-repeat;
-  -webkit-mask-position: center;
-  -webkit-mask-size: contain;
-  transition: background-color 0.25s ease;
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+  transition: transform 0.25s ease;
 }
 
 .doctor-social a:hover .doctor-social-icon {
-  background-color: var(--color-white);
+  transform: scale(1.1);
 }
 
 .doctor-en {
@@ -806,20 +800,28 @@ ul { list-style: none; margin: 0; padding: 0; }
 }
 
 @media (max-width: 899px) {
-  .credential-list { align-items: center; }
-  .credential-list li { text-align: left; }
+  .credential-list { max-width: 420px; margin: 0 auto; }
 }
 
 /* ---------------- Method section ---------------- */
 .method {
   padding: 80px 0;
-  background: var(--color-cream);
+  background-image:
+    linear-gradient(rgba(10, 15, 28, 0.75), rgba(10, 15, 28, 0.75)),
+    url("https://tresure-clinic.com/wp-content/uploads/2026/07/men_health_gym02.jpg");
+  background-size: cover;
+  background-position: center;
 }
 
 .method-head {
   max-width: 760px;
   margin: 0 auto;
   text-align: center;
+}
+
+.method-head .section-title,
+.method-head .section-desc {
+  color: var(--color-white);
 }
 
 .video-embed {
@@ -853,11 +855,18 @@ ul { list-style: none; margin: 0; padding: 0; }
 }
 
 .method-tech-card {
-  background: var(--color-white);
+  background: rgba(255, 255, 255, 0.8);
   border: 1px solid var(--color-brown-100);
   border-radius: var(--radius-lg);
   padding: 28px;
   box-shadow: var(--shadow-soft);
+}
+
+.method-tech-head {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin: 0 0 16px;
 }
 
 .method-tech-num {
@@ -871,14 +880,14 @@ ul { list-style: none; margin: 0; padding: 0; }
   color: var(--color-white);
   font-weight: 700;
   font-size: 1.05rem;
-  margin: 0 0 16px;
+  flex-shrink: 0;
 }
 
 .method-tech-title {
   font-size: 1.1rem;
   font-weight: 700;
   color: var(--color-brown-900);
-  margin: 0 0 12px;
+  margin: 0;
 }
 
 .method-tech-desc {
@@ -893,6 +902,7 @@ ul { list-style: none; margin: 0; padding: 0; }
   margin-left: auto;
   margin-right: auto;
   text-align: center;
+  color: var(--color-white);
 }
 
 .method-badges {
@@ -919,7 +929,7 @@ ul { list-style: none; margin: 0; padding: 0; }
 .method-gallery-title {
   font-size: 1.2rem;
   font-weight: 700;
-  color: var(--color-brown-900);
+  color: var(--color-white);
   text-align: center;
   margin: 0 0 28px;
 }
