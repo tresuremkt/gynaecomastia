@@ -210,20 +210,6 @@ ul { list-style: none; margin: 0; padding: 0; }
   flex-shrink: 0;
 }
 
-.hero-visual { display: flex; justify-content: center; }
-
-.hero-visual-frame {
-  position: relative;
-  width: 100%;
-  max-width: 420px;
-}
-
-.hero-illustration {
-  width: 100%;
-  height: auto;
-  filter: drop-shadow(var(--shadow-soft));
-}
-
 @keyframes spin-slow {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
@@ -329,21 +315,16 @@ ul { list-style: none; margin: 0; padding: 0; }
   .hero-cta { flex-wrap: nowrap; }
 }
 
-@media (min-width: 900px) {
-  .hero-inner {
-    grid-template-columns: 1.1fr 0.9fr;
-    gap: 60px;
-  }
+.hero-copy { max-width: 640px; }
 
+@media (min-width: 900px) {
   .hero-copy { text-align: left; }
 }
 
 @media (max-width: 899px) {
-  .hero-copy { text-align: center; }
+  .hero-copy { text-align: center; margin: 0 auto; }
   .hero-cta { justify-content: center; }
   .trust-list { align-items: center; }
-  .hero-visual { order: -1; margin-bottom: 8px; }
-  .hero-visual-frame { max-width: 300px; }
   .badge-float { font-size: 0.75rem; padding: 8px 14px; }
 }
 
@@ -397,40 +378,67 @@ ul { list-style: none; margin: 0; padding: 0; }
 
 /* ---------------- Problem section ---------------- */
 .problem {
-  padding: 72px 0;
+  padding: 80px 0;
   background: var(--color-white);
 }
 
-.problem-inner {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 40px;
-  align-items: center;
+.problem-chart {
+  display: flex;
+  justify-content: center;
+  margin: 0 0 40px;
 }
 
-@media (min-width: 900px) {
-  .problem-inner {
-    grid-template-columns: 0.9fr 1.1fr;
-    gap: 60px;
-  }
-
-  .problem-copy { text-align: left; }
+.problem-chart-frame {
+  position: relative;
+  width: 100%;
+  max-width: 380px;
 }
 
-@media (max-width: 899px) {
-  .problem-copy { text-align: center; }
+.stat-illustration {
+  width: 100%;
+  height: auto;
+  filter: drop-shadow(var(--shadow-soft));
+}
+
+.problem-copy {
+  max-width: 760px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.problem-media {
+  max-width: 720px;
+  margin: 40px auto 0;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-soft);
+}
+
+.problem-photo {
+  width: 100%;
+  height: auto;
+  display: block;
 }
 
 /* ---------------- Types section ---------------- */
 .types {
   padding: 80px 0;
-  background: var(--color-cream);
+  background-image:
+    linear-gradient(rgba(10, 15, 28, 0.75), rgba(10, 15, 28, 0.75)),
+    url("https://tresure-clinic.com/wp-content/uploads/2026/07/man-health-background.jpg");
+  background-size: cover;
+  background-position: center;
 }
 
 .types-head {
   max-width: 640px;
   margin: 0 auto 48px;
   text-align: center;
+}
+
+.types-head .section-title,
+.types-head .section-desc {
+  color: var(--color-white);
 }
 
 .type-grid {
@@ -469,6 +477,13 @@ ul { list-style: none; margin: 0; padding: 0; }
   .type-card { opacity: 1; transform: none; transition: none; }
 }
 
+.type-card-head {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin: 0 0 20px;
+}
+
 .type-icon {
   width: 64px;
   height: 64px;
@@ -478,7 +493,7 @@ ul { list-style: none; margin: 0; padding: 0; }
   border-radius: 18px;
   background: var(--color-brown-100);
   color: var(--color-brown-600);
-  margin: 0 0 20px;
+  flex-shrink: 0;
 }
 
 .type-icon svg,
@@ -488,7 +503,7 @@ ul { list-style: none; margin: 0; padding: 0; }
   font-size: 1.15rem;
   font-weight: 700;
   color: var(--color-brown-900);
-  margin: 0 0 18px;
+  margin: 0;
   white-space: nowrap;
 }
 
@@ -520,11 +535,6 @@ ul { list-style: none; margin: 0; padding: 0; }
   font-size: 0.92rem;
   color: var(--color-text-soft);
   line-height: 1.65;
-}
-
-.types-media {
-  max-width: 640px;
-  margin: 48px auto 0;
 }
 
 /* ---------------- Why section (accordion) ---------------- */
@@ -920,11 +930,11 @@ ul { list-style: none; margin: 0; padding: 0; }
   gap: 20px;
 }
 
-@media (min-width: 480px) {
+@media (min-width: 768px) {
   .ba-grid { grid-template-columns: repeat(2, 1fr); }
 }
 
-@media (min-width: 900px) {
+@media (min-width: 1100px) {
   .ba-grid { grid-template-columns: repeat(3, 1fr); }
 }
 
