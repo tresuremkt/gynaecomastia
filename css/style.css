@@ -294,20 +294,20 @@ ul { list-style: none; margin: 0; padding: 0; }
   display: flex;
   align-items: center;
   justify-content: center;
-  background: rgba(255, 255, 255, 0.85);
+  background: rgba(255, 255, 255, 0.5);
   backdrop-filter: blur(6px);
   color: var(--color-brown-700);
-  border: 1px solid var(--color-brown-100);
+  border: 1px solid rgba(255, 255, 255, 0.6);
   box-shadow: var(--shadow-soft);
   transition: transform 0.25s ease, background-color 0.25s ease;
 }
 
 .back-to-top:hover {
   transform: translateY(-2px);
-  background: var(--color-white);
+  background: rgba(255, 255, 255, 0.7);
 }
 
-.back-to-top svg { width: 22px; height: 22px; }
+.back-to-top svg { width: 24px; height: 24px; }
 
 .line-fab {
   display: inline-flex;
