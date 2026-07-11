@@ -275,12 +275,41 @@ ul { list-style: none; margin: 0; padding: 0; }
   .scan-ring, .scroll-cue span { animation: none; }
 }
 
-/* ---------------- LINE OA floating button ---------------- */
-.line-fab {
+/* ---------------- Floating action stack (back-to-top + LINE OA) ---------------- */
+.fab-stack {
   position: fixed;
   right: 20px;
   bottom: 20px;
   z-index: 70;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.back-to-top {
+  width: 48px;
+  height: 48px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(6px);
+  color: var(--color-brown-700);
+  border: 1px solid var(--color-brown-100);
+  box-shadow: var(--shadow-soft);
+  transition: transform 0.25s ease, background-color 0.25s ease;
+}
+
+.back-to-top:hover {
+  transform: translateY(-2px);
+  background: var(--color-white);
+}
+
+.back-to-top svg { width: 22px; height: 22px; }
+
+.line-fab {
   display: inline-flex;
   align-items: center;
   gap: 8px;
@@ -307,7 +336,10 @@ ul { list-style: none; margin: 0; padding: 0; }
 .line-fab-icon { width: 24px; height: 24px; flex-shrink: 0; object-fit: contain; }
 
 @media (max-width: 480px) {
-  .line-fab { right: 14px; bottom: 14px; padding: 11px 16px 11px 11px; font-size: 0.85rem; }
+  .fab-stack { right: 14px; bottom: 14px; gap: 8px; }
+  .back-to-top { width: 40px; height: 40px; }
+  .back-to-top svg { width: 18px; height: 18px; }
+  .line-fab { padding: 11px 16px 11px 11px; font-size: 0.85rem; }
 }
 
 /* ---------------- Responsive ---------------- */
@@ -324,14 +356,14 @@ ul { list-style: none; margin: 0; padding: 0; }
 @media (max-width: 899px) {
   .hero-copy { text-align: center; margin: 0 auto; }
   .hero-cta { justify-content: center; }
-  .trust-list { align-items: center; }
+  .trust-list { max-width: 320px; margin: 0 auto; }
   .badge-float { font-size: 0.75rem; padding: 8px 14px; }
 }
 
 @media (max-width: 480px) {
   .container { padding: 0 18px; }
   .brand-logo { height: 40px; }
-  .hero { padding: 40px 0 70px; }
+  .hero { padding: 40px 0 40px; }
   .hero-cta { flex-direction: column; width: 100%; }
   .hero-cta .btn { width: 100%; }
 }
@@ -524,7 +556,7 @@ ul { list-style: none; margin: 0; padding: 0; }
 .type-detail div { display: flex; flex-direction: column; gap: 3px; }
 
 .type-detail dt {
-  font-size: 0.8rem;
+  font-size: 0.9rem;
   font-weight: 700;
   color: var(--color-brown-500);
   letter-spacing: 0.02em;
@@ -535,6 +567,14 @@ ul { list-style: none; margin: 0; padding: 0; }
   font-size: 0.92rem;
   color: var(--color-text-soft);
   line-height: 1.65;
+}
+
+@media (max-width: 480px) {
+  .type-card { padding: 24px 20px; }
+  .type-card-head { gap: 10px; }
+  .type-icon { width: 48px; height: 48px; border-radius: 14px; }
+  .type-icon svg, .type-icon img { width: 26px; height: 26px; }
+  .type-title { font-size: 1.02rem; }
 }
 
 /* ---------------- Why section (accordion) ---------------- */
@@ -886,6 +926,12 @@ ul { list-style: none; margin: 0; padding: 0; }
   background: var(--color-brown-100);
   padding: 10px 22px;
   border-radius: 999px;
+  white-space: nowrap;
+}
+
+@media (max-width: 480px) {
+  .method-badges { gap: 8px; }
+  .method-badge { font-size: 0.8rem; padding: 8px 14px; }
 }
 
 .method-gallery {
